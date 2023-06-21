@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My HTML File</title>
+  </head>
+  <body>
+    <h1>Hello world</h1>
+    <button id="my-button">Click me</button>
+    <ul id="my-list"></ul>
+    <textarea id="my-textarea"></textarea>
+    <button id="add-data">Add data</button>
+    <script>
+      const myButton = document.getElementById("my-button");
+      const myHeader = document.querySelector("h1");
+      const myList = document.getElementById("my-list");
+      const myTextarea = document.getElementById("my-textarea");
+      const addDataButton = document.getElementById("add-data");
+      let count = 1;
+
+      myButton.addEventListener("click", () => {
+        console.log("hello world");
+        myHeader.innerText = "My notebook";
+      });
+
+      addDataButton.addEventListener("click", () => {
+        const newListItem = document.createElement("li");
+        newListItem.innerText = myTextarea.value;
+        myList.appendChild(newListItem);
+        count++;
+      });
+    </script>
+  </body>
+</html>
